@@ -17,4 +17,27 @@ Intelligence, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University o
 
 :star: If Perceive-IR is helpful to your images or projects, please help star this repo. Thank you! :point_left:
 
----
+
+## 📜 License
+
+This project is licensed under the Pi-Lab License 1.0 - see the [LICENSE](LICENSE) file for details.
+
+## :book: Citation
+
+If you find our repo useful for your research, please consider citing our paper:
+
+```bibtex
+@ARTICLE{PerceiveIR,
+  author={Zhang, Xu and Ma, Jiaqi and Wang, Guoli and Zhang, Qian and Zhang, Huan and Zhang, Lefei},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-1}
+  doi={10.1109/TIP.2025.3566300}}
+```
+
+## :postbox: Contact
+
+For technical questions, please contact `zhangx0802[AT]whu.edu.cn`
