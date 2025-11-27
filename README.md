@@ -29,7 +29,7 @@ If you find our repo useful for your research, please consider citing our paper:
   year={2025},
   volume={},
   number={},
-  pages={1-1}
+  pages={1-1},
   doi={10.1109/TIP.2025.3566300}}
 ```
 
