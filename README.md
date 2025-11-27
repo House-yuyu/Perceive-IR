@@ -1,9 +1,7 @@
 # :fire: Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration (TIP'2025)
 
-<a href='https://arxiv.org/abs/2503.23580'><img src='https://img.shields.io/badge/Paper-Arxiv-b31b1b.svg'></a> &nbsp;&nbsp;
-<a href='https://adam-duan.github.io/projects/dit4sr/'><img src='https://img.shields.io/badge/Project page-DiT4SR-1bb41b.svg'></a> &nbsp;&nbsp;
-<a href='assets/DiT4SR_CN.pdf'><img src='https://img.shields.io/badge/Paper-中文版-blue.svg'></a> &nbsp;&nbsp;
-
+<a href='https://arxiv.org/pdf/2408.15994'><img src='https://img.shields.io/badge/Paper-Arxiv-b31b1b.svg'></a> &nbsp;&nbsp;
+<a href='https://house-yuyu.github.io/Perceive-IR/'><img src='https://img.shields.io/badge/Project page-Perceive-IR-1bb41b.svg'></a> &nbsp;&nbsp;
 
 
 
