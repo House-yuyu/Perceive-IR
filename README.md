@@ -1,7 +1,7 @@
 # :fire: Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration (TIP'2025)
 
 <a href='https://arxiv.org/pdf/2408.15994'><img src='https://img.shields.io/badge/Paper-Arxiv-b31b1b.svg'></a> &nbsp;&nbsp;
-<a href='https://house-yuyu.github.io/Perceive-IR/'><img src='https://img.shields.io/badge/Project page-Perceive-IR-1bb41b.svg'></a> &nbsp;&nbsp;
+[[Project Page](https://house-yuyu.github.io/Perceive-IR/)]
 
 
 
@@ -17,10 +17,6 @@ Intelligence, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University o
 
 :star: If Perceive-IR is helpful to your images or projects, please help star this repo. Thank you! :point_left:
 
-
-## 📜 License
-
-This project is licensed under the Pi-Lab License 1.0 - see the [LICENSE](LICENSE) file for details.
 
 ## :book: Citation
 
@@ -40,4 +36,4 @@ If you find our repo useful for your research, please consider citing our paper:
 
 ## :postbox: Contact
 
-For technical questions, please contact `zhangx0802[AT]whu.edu.cn`
+For technical questions, please contact `zhangx0802@whu.edu.cn`
