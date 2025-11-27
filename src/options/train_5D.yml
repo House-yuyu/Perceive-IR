@@ -1,0 +1,121 @@
+
+# CUDA_VISIBLE_DEVICES=1,2,3,7 python -m torch.distributed.launch --nproc_per_node=4 --master_port=6972 basicsr/train.py -opt options/train/lq_aware_vector/final/weather_BaselinewLqwVec_wCap_LdmCA_Iter1_wHqwRcpRes_Iter2_CHIMB_LqCaption_800K.yml --launcher pytorch 2>&1 --debug | tee debug.log
+name: train_allweather
+model_type: ImageCleanModel_IterSup_Vec 
+scale: 1                                                      
+num_gpu: auto  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+
+# dataset and data loader settings
+datasets:
+  train:
+    name: AllWeather
+    type: CsvDatasetV2
+    root_path: /path/to/train_dataset/rootdir
+    csv_file_path: /path/to/train_csv_file
+    require_text: true    #
+    io_backend:
+      type: disk
+
+    gt_size: 256
+    use_hflip: true
+    use_rot: true
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 1
+    batch_size_per_gpu: 1 
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  val_1:
+    name: RainDrop_TestA_Val
+    type: CsvDatasetV2
+    root_path: /path/to/test_dataset/rootdir
+    csv_file_path: /path/to/test_csv_file
+    require_text: true    #
+    io_backend:
+      type: disk
+    mod_crop_scale: 8     # padding 
+
+    
+# network structures
+network_g:
+  type: cyclicPrompt
+  inp_channels: 3        
+  out_channels: 3
+  dim: 48
+  num_blocks: [ 4,6,6,8 ]
+  num_refinement_blocks: 4
+  heads: [ 1,2,4,8 ]
+  ffn_expansion_factor: 2.66
+  bias: False
+  LayerNorm_type: WithBias
+  dual_pixel_task: False
+  num_vector: 8
+  iter_times: 2   ###############
+
+# path
+path:
+  pretrain_network_g: ~
+  strict_load_g: true
+  resume_state: ~
+
+# training settings
+train:
+  ema_decay: 0.999                ##### 
+
+  optim_g:
+    type: AdamW
+    lr: !!float 2e-4              
+    weight_decay: !!float 1e-4    
+    betas: [0.9, 0.999]
+
+  scheduler:
+    type: CosineAnnealingRestartLR
+    periods: [800000]     
+    restart_weights: [1]
+    eta_min: 0.000001  
+
+  total_iter: 800000    
+  warmup_iter: -1 # no warm up
+
+  # losses
+  pixel_opt:
+    type: L1Loss
+    loss_weight: 1
+    reduction: mean
+
+# validation settings
+val:
+  val_freq: !!float 5e3 # for 3e3
+  save_img: true
+  rgb2bgr: true
+  use_image: true
+
+  metrics:
+    psnr_y: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+    ssim_y:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: true
+
+
+# logging settings
+logger:
+  print_freq: 100
+  save_checkpoint_freq: !!float 5e3
+  use_tb_logger: true
+  wandb:
+    project: text
+    resume_id: ~
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+
+find_unused_parameters: true

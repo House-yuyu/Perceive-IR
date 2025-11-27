@@ -1,0 +1,102 @@
+
+# general settings
+name: test_AllWeather
+model_type: ImageCleanModel_IterSup_Vec 
+scale: 1
+num_gpu: auto  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+# dataset and data loader settings
+datasets:
+  test_1:
+    name: RainDrop_TestA
+    type: CsvDatasetV2
+    root_path: /path/to/test_dataset/rootdir
+    csv_file_path: /path/to/testa_csv_file
+    require_text: true    ###
+    io_backend:
+      type: disk
+    mod_crop_scale: 8
+
+  test_2:
+    name: RainFog_OutdoorRain_Test1
+    type: CsvDatasetV2
+    root_path: /path/to/test_dataset/rootdir
+    csv_file_path: /path/to/test1_csv_file
+    require_text: true     ###
+    io_backend:
+      type: disk
+    mod_crop_scale: 8
+
+  test_3:
+    name: Snow100K-L
+    type: CsvDatasetV2
+    root_path: /path/to/test_dataset/rootdir
+    csv_file_path: /path/to/snow100kl_csv_file
+    require_text: true     ###
+    io_backend:
+      type: disk
+    mod_crop_scale: 8 
+
+  test_4:
+    name: Snow100K-S
+    type: CsvDatasetV2
+    root_path: /path/to/test_dataset/rootdir
+    csv_file_path: /path/to/snow100ks_csv_file
+    require_text: true     ###
+    io_backend:
+      type: disk
+    mod_crop_scale: 8
+
+# network structures
+network_g:
+  type: cyclicPrompt
+  inp_channels: 3         # Restomer Config
+  out_channels: 3
+  dim: 48
+  num_blocks: [ 4,6,6,8 ]
+  num_refinement_blocks: 4
+  heads: [ 1,2,4,8 ]
+  ffn_expansion_factor: 2.66
+  bias: False
+  LayerNorm_type: WithBias
+  dual_pixel_task: False
+
+  num_vector: 8
+  iter_times: 2   ###############
+
+# path
+path:
+  pretrain_network_g: /path/to/model_weigths/  # weights/allweather/net_g_730000.pth
+  strict_load_g: true
+  param_key: params_ema
+  resume_state: ~
+
+# validation settings
+val:
+  save_img: true
+  grids: false      
+  window_size: 8    
+
+  metrics:
+    # psnr: # metric name, can be arbitrary
+    #   type: calculate_psnr
+    #   crop_border: 0
+    #   test_y_channel: false
+    # ssim:
+    #   type: calculate_ssim
+    #   crop_border: 0
+    #   test_y_channel: false
+      
+    psnr_y: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: true
+    ssim_y:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: true
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
