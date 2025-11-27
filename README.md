@@ -35,4 +35,5 @@ If you find our repo useful for your research, please consider citing our paper:
 
 ## :postbox: Contact
 
-For technical questions, please contact `zhangx0802@whu.edu.cn`
+If you have any questions, please feel free to reach us out at <a href="zhangx0802@whu.edu.cn">zhangx0802@whu.edu.cn</a>.
+
