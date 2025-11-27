@@ -11,7 +11,7 @@ This is the official PyTorch codes for the paper:
 Intelligence, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University of Technology <br>
 > <sup>*</sup>Co-first author. <br> <sup>📧;</sup>Corresponding author.
 
-![teaser_img](src/assets/PerceiveIR_Stage2.pdf)
+![teaser_img](fig/PerceiveIR_Stage2.png)
 
 
 :star: If Perceive-IR is helpful to your images or projects, please help star this repo. Thank you! :point_left:
