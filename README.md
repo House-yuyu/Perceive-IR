@@ -7,8 +7,9 @@
 This is the official PyTorch codes for the paper:
 
 >**Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration**<br>[Xu Zhang<sup>1*</sup>](https://house-yuyu.github.io/), [Jiaqi Ma<sup>1,2*</sup>](https://leonmakise.github.io/), [Guoli Wang<sup>3</sup>](https://scholar.google.com.hk/citations?user=z-25fk0AAAAJ&hl=zh-CN), [Qian Zhang<sup>3</sup>](https://scholar.google.com.hk/citations?user=pCY-bikAAAAJ&hl=zh-CN), [Huan Zhang<sup>4</sup>](https://scholar.google.com.hk/citations?user=bJjd_kMAAAAJ&hl=zh-CN), [Lefei Zhang<sup>1📧</sup>](https://scholar.google.com.hk/citations?user=BLKHwNwAAAAJ&hl=zh-CN)<br>
-> <sup>1</sup> Wuhan University, <sup>2</sup>, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University of Technology<br>
-> <sup>*</sup> Co-first author<br> <sup>📧</sup>Corresponding author.
+> <sup>1</sup> Wuhan University, <sup>2</sup> Mohamed bin Zayed University of Artificial
+ Intelligence, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University of Technology<br>
+> <sup>*</sup> Co-first author <sup>📧</sup>Corresponding author.
 
 ![teaser_img](fig/PerceiveIR_Stage2.png)
 
@@ -21,14 +22,14 @@ This is the official PyTorch codes for the paper:
 If you find our repo useful for your research, please consider citing our paper:
 
 ```bibtex
-@ARTICLE{UniUIR,
-  author={Zhang, Xu and Zhang, Huan and Wang, Guoli and Zhang, Qian and Zhang, Lefei and Du, Bo},
+@ARTICLE{Perceive-IR,
+  author={Zhang, Xu and Ma, Jiaqi and Wang, Guoli and Zhang, Qian and Zhang, Huan and Zhang, Lefei},
   journal={IEEE Transactions on Image Processing}, 
-  title={UniUIR: Considering Underwater Image Restoration as an All-in-One Learner}, 
+  title={Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration}, 
   year={2025},
-  volume={34},
+  volume={},
   number={},
-  pages={6963-6977}}
+  pages={1-1}}
 ```
 
 ## :postbox: Contact
