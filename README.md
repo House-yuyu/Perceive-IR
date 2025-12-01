@@ -8,7 +8,7 @@ This is the official PyTorch codes for the paper:
 
 >**UniUIR: Considering Underwater Image Restoration as an All-in-One Learner**<br>  [Xu Zhang<sup>1*</sup>](https://house-yuyu.github.io/), [Huan Zhang<sup>2</sup>](https://scholar.google.com.hk/citations?user=bJjd_kMAAAAJ&hl=zh-CN), [Guoli Wang<sup>3</sup>](https://scholar.google.com.hk/citations?user=z-25fk0AAAAJ&hl=zh-CN), [Qian Zhang<sup>3</sup>](https://scholar.google.com.hk/citations?user=pCY-bikAAAAJ&hl=zh-CN), [Lefei Zhang<sup>1📧</sup>](https://scholar.google.com.hk/citations?user=BLKHwNwAAAAJ&hl=zh-CN), [Bo Du<sup>1</sup>](https://scholar.google.com.hk/citations?user=Shy1gnMAAAAJ&hl=zh-CN)<br>
 > <sup>1</sup> Wuhan University, <sup>2</sup> Guangdong University of Technology, <sup>3</sup> Horizon Robotics<br>
-> <sup>📧;</sup>Corresponding author.
+> <sup>📧</sup>Corresponding author.
 
 ![teaser_img](fig/PerceiveIR_Stage2.png)
 
