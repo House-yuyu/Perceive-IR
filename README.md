@@ -1,14 +1,14 @@
-# :fire: UniUIR: Considering Underwater Image Restoration as an All-in-One Learner (TIP'2025)
+# :fire: Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration (TIP'2025)
 
-> [[IEEE](https://ieeexplore.ieee.org/document/11202372)] &emsp; [[arxiv](https://arxiv.org/abs/2501.12981)] &emsp;[[Project Page](https://house-yuyu.github.io/UniUIR/)]
+> [[IEEE](https://ieeexplore.ieee.org/document/10990319)] &emsp; [[arxiv](https://arxiv.org/abs/2408.15994)] &emsp;[[Project Page](https://house-yuyu.github.io/Perceive-IR/)]
 
 
 
 This is the official PyTorch codes for the paper:
 
->**UniUIR: Considering Underwater Image Restoration as an All-in-One Learner**<br>  [Xu Zhang<sup>1*</sup>](https://house-yuyu.github.io/), [Huan Zhang<sup>2</sup>](https://scholar.google.com.hk/citations?user=bJjd_kMAAAAJ&hl=zh-CN), [Guoli Wang<sup>3</sup>](https://scholar.google.com.hk/citations?user=z-25fk0AAAAJ&hl=zh-CN), [Qian Zhang<sup>3</sup>](https://scholar.google.com.hk/citations?user=pCY-bikAAAAJ&hl=zh-CN), [Lefei Zhang<sup>1📧</sup>](https://scholar.google.com.hk/citations?user=BLKHwNwAAAAJ&hl=zh-CN), [Bo Du<sup>1</sup>](https://scholar.google.com.hk/citations?user=Shy1gnMAAAAJ&hl=zh-CN)<br>
-> <sup>1</sup> Wuhan University, <sup>2</sup> Guangdong University of Technology, <sup>3</sup> Horizon Robotics<br>
-> <sup>📧</sup>Corresponding author.
+>**Perceive-IR: Learning to Perceive Degradation Better for All-in-One Image Restoration**<br>[Xu Zhang<sup>1*</sup>](https://house-yuyu.github.io/), [Jiaqi Ma<sup>1,2*</sup>](https://leonmakise.github.io/), [Guoli Wang<sup>3</sup>](https://scholar.google.com.hk/citations?user=z-25fk0AAAAJ&hl=zh-CN), [Qian Zhang<sup>3</sup>](https://scholar.google.com.hk/citations?user=pCY-bikAAAAJ&hl=zh-CN), [Huan Zhang<sup>4</sup>](https://scholar.google.com.hk/citations?user=bJjd_kMAAAAJ&hl=zh-CN), [Lefei Zhang<sup>1📧</sup>](https://scholar.google.com.hk/citations?user=BLKHwNwAAAAJ&hl=zh-CN)<br>
+> <sup>1</sup> Wuhan University, <sup>2</sup>, <sup>3</sup> Horizon Robotics, <sup>4</sup> Guangdong University of Technology<br>
+> <sup>*</sup> Co-first author<br> <sup>📧</sup>Corresponding author.
 
 ![teaser_img](fig/PerceiveIR_Stage2.png)
 
