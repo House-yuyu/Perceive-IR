@@ -1,0 +1,244 @@
+{
+  "project": "perceiveIR",
+  "baidu_url": "https://pan.baidu.com/s/1r04w7uSwXZ6V8bE1X9BbMQ?pwd=k4uc",
+  "extraction_code": "k4uc",
+  "profiles": [
+    "inference3",
+    "inference5",
+    "stage1",
+    "train",
+    "specialist",
+    "embeddings",
+    "all"
+  ],
+  "assets": [
+    {
+      "path": "weight/AIO-3D.pth",
+      "profiles": [
+        "inference3"
+      ],
+      "purpose": "three-task restoration checkpoint"
+    },
+    {
+      "path": "weight/AIO-5D.pth",
+      "profiles": [
+        "inference5"
+      ],
+      "purpose": "five-task restoration checkpoint"
+    },
+    {
+      "path": "weight/dinov2-base/config.json",
+      "profiles": [
+        "inference3",
+        "inference5",
+        "train"
+      ],
+      "purpose": "DINOv2 Hugging Face configuration"
+    },
+    {
+      "path": "weight/dinov2-base/model.safetensors",
+      "profiles": [
+        "inference3",
+        "inference5",
+        "train"
+      ],
+      "purpose": "DINOv2 base model"
+    },
+    {
+      "path": "weight/clip/ViT-B-32.pt",
+      "profiles": [
+        "stage1",
+        "train"
+      ],
+      "purpose": "CLIP ViT-B/32 image/text encoder"
+    },
+    {
+      "path": "weight/vgg16-397923af.pth",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "VGG16 perceptual loss"
+    },
+    {
+      "path": "weight/stage1/quality_prompts_100000.pth",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "trained quality prompts"
+    },
+    {
+      "path": "weight/stage1/holdout_0/medium_020000.pth",
+      "profiles": [
+        "stage1",
+        "train"
+      ],
+      "purpose": "medium model heldout fold 0"
+    },
+    {
+      "path": "weight/stage1/holdout_1/medium_020000.pth",
+      "profiles": [
+        "stage1",
+        "train"
+      ],
+      "purpose": "medium model heldout fold 1"
+    },
+    {
+      "path": "weight/proxies/promptir/model.ckpt",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "PromptIR all-in-one model"
+    },
+    {
+      "path": "weight/proxies/instructir/im_instructir-7d.pt",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "InstructIR 7D image model"
+    },
+    {
+      "path": "weight/proxies/instructir/task_embeddings.pt",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "three-task InstructIR text vectors"
+    },
+    {
+      "path": "weight/proxies/instructir/task_embeddings_five.pt",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "five-task InstructIR text vectors"
+    },
+    {
+      "path": "weight/proxies/fsnet/ots.pkl",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "FSNet OTS model"
+    },
+    {
+      "path": "weight/proxies/mambair/denoise15.pth",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "MambaIR v1 color Gaussian sigma 15"
+    },
+    {
+      "path": "weight/proxies/mambair/denoise25.pth",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "MambaIR v1 color Gaussian sigma 25"
+    },
+    {
+      "path": "weight/proxies/mambair/denoise50.pth",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "MambaIR v1 color Gaussian sigma 50"
+    },
+    {
+      "path": "weight/proxies/nafnet/NAFNet-GoPro-width32.pth",
+      "profiles": [
+        "specialist"
+      ],
+      "purpose": "optional offline GoPro proxy"
+    },
+    {
+      "path": "weight/proxies/retinexformer/LOL_v1.pth",
+      "profiles": [
+        "specialist"
+      ],
+      "purpose": "optional offline LOL-v1 proxy"
+    },
+    {
+      "path": "weight/proxies/instructir/lm_instructir-7d.pt",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "optional text projection head"
+    },
+    {
+      "path": "weight/proxies/instructir/bge-micro-v2/config.json",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "optional text encoder config"
+    },
+    {
+      "path": "weight/proxies/instructir/bge-micro-v2/model.safetensors",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "optional text encoder model"
+    },
+    {
+      "path": "weight/proxies/instructir/bge-micro-v2/tokenizer_config.json",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "optional tokenizer config"
+    },
+    {
+      "path": "weight/proxies/instructir/bge-micro-v2/tokenizer.json",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "optional tokenizer vocabulary",
+      "any_of": [
+        "weight/proxies/instructir/bge-micro-v2/tokenizer.json",
+        "weight/proxies/instructir/bge-micro-v2/vocab.txt"
+      ]
+    },
+    {
+      "path": "third_party/promptir/net/model.py",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "PromptIR source"
+    },
+    {
+      "path": "third_party/instructir/models/instructir.py",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "InstructIR source"
+    },
+    {
+      "path": "third_party/fsnet/Dehazing/OTS/models/FSNet.py",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "FSNet source"
+    },
+    {
+      "path": "third_party/mambair/basicsr/archs/mambair_arch.py",
+      "profiles": [
+        "train"
+      ],
+      "purpose": "MambaIR source"
+    },
+    {
+      "path": "third_party/nafnet/basicsr/models/archs/NAFNet_arch.py",
+      "profiles": [
+        "specialist"
+      ],
+      "purpose": "NAFNet source"
+    },
+    {
+      "path": "third_party/retinexformer/basicsr/models/archs/RetinexFormer_arch.py",
+      "profiles": [
+        "specialist"
+      ],
+      "purpose": "Retinexformer source"
+    },
+    {
+      "path": "third_party/instructir/text/models.py",
+      "profiles": [
+        "embeddings"
+      ],
+      "purpose": "InstructIR text head source"
+    }
+  ]
+}

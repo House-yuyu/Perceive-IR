@@ -1,0 +1,47 @@
+name: perceiveIR
+seed: 0
+
+data:
+  root: data/AiOIR
+
+model:
+  dim: 48
+  blocks: [4, 6, 6, 8]
+  heads: [1, 2, 4, 8]
+  refinement_blocks: 4
+
+pretrained:
+  clip_cache: weight/clip
+
+medium:
+  output_root: experiments/perceiveIR/stage1/medium_models
+  triplet_root: experiments/perceiveIR/stage1/triplets
+  patch_size: 128
+  batch_size_per_gpu: 4
+  workers_per_gpu: 2
+  total_iters: 25000
+  learning_rate: 0.0002
+  minimum_learning_rate: 0.000001
+  precision: bf16
+  task_resampling:
+    denoise: 3
+    dehaze: 1
+    derain: 120
+    deblur: 50
+    lowlight: 40
+  log_every: 100
+  save_every: 5000
+
+prompt:
+  manifests:
+    - experiments/perceiveIR/stage1/triplets/fold_0/manifest.jsonl
+    - experiments/perceiveIR/stage1/triplets/fold_1/manifest.jsonl
+  output: experiments/perceiveIR/stage1/quality_prompts
+  context_length: 16
+  batch_size_per_gpu: 8
+  workers_per_gpu: 4
+  total_iters: 100000
+  learning_rate: 0.00004
+  minimum_learning_rate: 0.000001
+  log_every: 100
+  save_every: 5000

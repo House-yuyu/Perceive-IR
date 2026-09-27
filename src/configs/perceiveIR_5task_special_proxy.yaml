@@ -1,0 +1,70 @@
+name: perceiveIR_five_tasks_special_proxy_20k_bs4
+seed: 0
+output: experiments/perceiveIR/stage2/five_task_proxy_upgrade/trial_20k
+data:
+  root: data/AiOIR
+  tasks: [denoise, dehaze, derain, deblur, lowlight]
+  patch_size: 256
+  batch_size_by_rank: [2, 2]
+  workers_per_gpu: 2
+  dynamic_denoise_proxy: true
+  shared_noise_positive: true
+  proxy_manifests:
+  - experiments/perceiveIR/stage1/triplets/fold_0/manifest.jsonl
+  - experiments/perceiveIR/stage1/triplets/fold_1/manifest.jsonl
+  special_proxy_manifest: experiments/perceiveIR/stage2/five_task_proxy_upgrade/rendered/manifest.jsonl
+  task_resampling:
+    denoise: 12
+    dehaze: 1
+    derain: 360
+    deblur: 30
+    lowlight: 140
+model:
+  dim: 48
+  blocks: [4, 6, 6, 8]
+  heads: [1, 2, 4, 8]
+  refinement_blocks: 4
+pretrained:
+  dinov2: weight/dinov2-base
+  clip_cache: weight/clip
+  vgg16: weight/vgg16-397923af.pth
+  quality_prompt_checkpoint: weight/stage1/quality_prompts_100000.pth
+  denoise_proxy_checkpoints:
+  - weight/stage1/holdout_0/medium_020000.pth
+  - weight/stage1/holdout_1/medium_020000.pth
+  promptir_proxy:
+    source: third_party/promptir
+    checkpoint: weight/proxies/promptir/model.ckpt
+  instructir_proxy:
+    source: third_party/instructir
+    checkpoint: weight/proxies/instructir/im_instructir-7d.pt
+    embeddings: weight/proxies/instructir/task_embeddings_five.pt
+  fsnet_proxy:
+    source: third_party/fsnet
+    checkpoint: weight/proxies/fsnet/ots.pkl
+  mambair_proxy:
+    source: third_party/mambair
+    checkpoints:
+      15: weight/proxies/mambair/denoise15.pth
+      25: weight/proxies/mambair/denoise25.pth
+      50: weight/proxies/mambair/denoise50.pth
+validation:
+  manifest: experiments/perceiveIR/stage2/five_tasks_proxy_all_500k_bs4/validation/manifest.json
+  every: 5000
+train:
+  total_iters: 20000
+  schedule_iters: 500000
+  dpl_probe_per_task: 24
+  learning_rate: 0.0002
+  minimum_learning_rate: 0.000001
+  weight_decay: 0.0001
+  precision: bf16
+  log_every: 100
+  save_every: 10000
+  retain_best_model: true
+  retain_last: true
+  resume: null
+  loss_weights:
+    contrastive: 0.1
+    clip: 0.05
+    perceptual: 0.1
